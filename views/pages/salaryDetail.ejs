@@ -1,0 +1,54 @@
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="display: inline-block;">Thêm/Sửa Nhân Viên</h5>
+                <a href="/salary"><button type="button" class="btn btn-info m-b-xs"  style="float: right ;">Quay Lại</button></a>
+                
+                <form method="post" action=" <%= locals.data ? '/salary/edit/'+data._id  : '/salary/add' %> ">
+                    <!-- <div class="container"> -->
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control"  name="name" value='<%= locals.data ? data.name : null %>' readonly>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Birthday</label>
+                                    <input type="date" class="form-control"  name="born" value='<%= locals.data ? data.born : null %>' readonly>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Position</label>
+                                    <input type="text" class="form-control"  name="position" value='<%= locals.data ? data.position : null %>' readonly>
+                                </div>
+                            </div>
+                            <div class="col-4"> 
+                                <div class="mb-3">
+                                    <label class="form-label">Salary </label>
+                                    <input type="number" class="form-control"  name="salary" value='<%= locals.data ? data.salary : null %>'>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Bonus </label>
+                                    <input type="number" class="form-control" max = 1 step=0.01 name="bonus" value='<%= locals.data ? data.bonus : null %>'>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

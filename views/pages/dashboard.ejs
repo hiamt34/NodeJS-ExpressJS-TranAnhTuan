@@ -5,8 +5,7 @@
             <div class="card stats-card">
                 <div class="card-body">
                     <div class="stats-info">
-                        <h5 class="card-title">BTC<span class="stats-change stats-change-danger">-5.5%</span></h5>
-                        <p class="stats-text">$38,900</p>
+                        <h5 class="card-title">Kỷ Luật<span class="stats-change stats-change-danger">-<%= punishs %></span></h5>
                     </div>
                     <div class="stats-icon change-danger">
                         <i class="material-icons">trending_down</i>
@@ -18,21 +17,7 @@
             <div class="card stats-card">
                 <div class="card-body">
                     <div class="stats-info">
-                        <h5 class="card-title">Eth<span class="stats-change stats-change-danger">-2.64%</span></h5>
-                        <p class="stats-text">$2,600</p>
-                    </div>
-                    <div class="stats-icon change-danger">
-                        <i class="material-icons">trending_down</i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card stats-card">
-                <div class="card-body">
-                    <div class="stats-info">
-                        <h5 class="card-title">BNB<span class="stats-change stats-change-success">+2%</span></h5>
-                        <p class="stats-text">$330</p>
+                        <h5 class="card-title">Tài Khoản<span class="stats-change stats-change-success">+<%= accounts %> </span></h5>
                     </div>
                     <div class="stats-icon change-success">
                         <i class="material-icons">trending_up</i>
@@ -44,150 +29,60 @@
             <div class="card stats-card">
                 <div class="card-body">
                     <div class="stats-info">
-                        <h5 class="card-title">ADA<span class="stats-change stats-change-danger">-8%</span></h5>
-                        <p class="stats-text">$1.31</p>
+                        <h5 class="card-title">Nhân viên<span class="stats-change stats-change-success">+<%= users %></span></h5>
                     </div>
-                    <div class="stats-icon change-danger">
-                        <i class="material-icons">trending_down</i>
+                    <div class="stats-icon change-success">
+                        <i class="material-icons">trending_up</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stats-card">
+                <div class="card-body">
+                    <div class="stats-info">
+                        <h5 class="card-title">Doanh Số<span class="stats-change stats-change-success">2%</span></h5>
+                        <p class="stats-text">6 Tỷ VNĐ</p>
+                    </div>
+                    <div class="stats-icon change-success">
+                        <i class="material-icons">trending_up</i>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+
     <div class="row">
-        <div class="col-md-8">
-            <div class="card card-bg">
-                <div class="card-body">
-                    <h5 class="card-title">Get Strarted</h5>
-                    <table class="table crypto-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Change</th>
-                                <th scope="col">Trade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td><img src="../../assets/images/crypto/btc.png" alt="">Bitcoin</td>
-                                <td>$38,900</td>
-                                <td class="text-danger">-0.53%</td>
-                                <td><button type="button" class="btn btn-link">Buy</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td><img src="../../assets/images/crypto/eth.png" alt="">Ethereum</td>
-                                <td>$2,600</td>
-                                <td class="text-success">+4.55%</td>
-                                <td><button type="button" class="btn btn-link">Buy</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td><img src="../../assets/images/crypto/btcc.png" alt="">Bitcoin Cash</td>
-                                <td>$542.20</td>
-                                <td class="text-danger">-0.30%</td>
-                                <td><button type="button" class="btn btn-link">Buy</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td><img src="../../assets/images/crypto/ltc.png" alt="">Litecoin</td>
-                                <td>$139.40</td>
-                                <td class="text-success">+2.19%</td>
-                                <td><button type="button" class="btn btn-link">Buy</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card card-bg">
-                <div class="card-body">
-                    <h5 class="card-title">Transactions</h5>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Bitcoin</td>
-                                <td><span class="badge bg-info">Recieve</span></td>
-                                <td>0.01</td>
-                            </tr>
-                            <tr>
-                                <td>Ethereum</td>
-                                <td><span class="badge bg-success">Buy</span></td>
-                                <td>0.3</td>
-                            </tr>
-                            <tr>
-                                <td>Ripple</td>
-                                <td><span class="badge bg-success">Buy</span></td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td>BNB</td>
-                                <td><span class="badge bg-danger">Failed</span></td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>Cardano</td>
-                                <td><span class="badge bg-warning">Recieve</span></td>
-                                <td>300</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card card-bg actions-widget text-center">
                 <div class="card-body">
                     <div class="actions-widget-item">
-                        <button type="button" class="btn btn-circle text-primary"><i class="fas fa-share"></i></button>
-                        <span class="actions-widget-item-title">Send</span>
+                        <a href="/punish"><button type="button" class="btn btn-circle text-primary"><i class="fas fa-bookmark"></i></button></a>
+                        <span class="actions-widget-item-title">QL Kỷ Luật</span>
                     </div>
                     <div class="actions-widget-item">
-                        <button type="button" class="btn btn-circle text-success"><i
-                                class="far fa-credit-card"></i></button>
-                        <span class="actions-widget-item-title">Deposit</span>
+                        <a href="/salary"><button type="button" class="btn btn-circle text-success"><i
+                                class="far fa-credit-card"></i></button></a>
+                        <span class="actions-widget-item-title">Lương</span>
                     </div>
                     <div class="actions-widget-item">
-                        <button type="button" class="btn btn-circle text-warning"><i class="fas fa-lock"></i></button>
-                        <span class="actions-widget-item-title">Stake</span>
+                        <a href="/account"><button type="button" class="btn btn-circle text-warning"><i class="fas fa-lock"></i></button></a>
+                        <span class="actions-widget-item-title">QL Tài khoản</span>
                     </div>
                     <div class="actions-widget-item">
-                        <button type="button" class="btn btn-circle text-info"><i class="fas fa-user-plus"></i></button>
-                        <span class="actions-widget-item-title">Add</span>
+                        <a href="/user"><button type="button" class="btn btn-circle text-info"><i class="fas fa-user-plus"></i></button></a>
+                        <span class="actions-widget-item-title">QL Nhân Viên</span>
                     </div>
                     <div class="actions-widget-item">
-                        <button type="button" class="btn btn-circle text-success"><i
-                                class="fas fa-calendar"></i></button>
-                        <span class="actions-widget-item-title">History</span>
+                        <a href="/time"><button type="button" class="btn btn-circle text-success"><i
+                                class="fas fa-calendar"></i></button></a>
+                        <span class="actions-widget-item-title">Lịch Công Tác</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card card-bg text-center">
-                <div class="card-body">
-                    <div class="">
-                        <h5 class="text-white">Claim your gift</h5>
-                        <p class="m-t-xs">5% off for the first buy</p>
-                        <a href="#" class="btn btn-success widget-info-action">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 </div>

@@ -1,0 +1,49 @@
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="display: inline-block;">Thêm/Sửa Nhân Viên</h5>
+                <a href="/punish"><button type="button" class="btn btn-info m-b-xs"  style="float: right ;">Quay Lại</button></a>
+                
+                <form method="post" action=" <%= locals.data ? '/punish/edit/'+data._id  : '/punish/add' %> ">
+                    <!-- <div class="container"> -->
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Name </label>
+                                     <select class="form-select" id="autoSizingSelect" name="name">
+                                        <% datas.forEach(data => { %>
+                                            <option value="<%= data._id  %> "><%= data.name  %>(<%= data.position  %>)</option>
+                                        <% }) %>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Lý do </label>
+                                     <select class="form-select" id="autoSizingSelect" name="punish">
+                                        <option value="">Chọn</option>
+                                        <option value="đi làm trễ 15p : phạt 20k lương ngày hôm đó -20000">đi làm trễ 15p : phạt 20k lương ngày hôm đó</option>
+                                        <option value="quên chấm công 3 lần trong tháng : trừ 100k -100000">quên chấm công 3 lần trong tháng : trừ 100k</option>
+                                        <option value="trước khi về không dọn dẹp chỗ làm việc mình ngồi : phạt 20k -20000">trước khi về không dọn dẹp chỗ làm việc mình ngồi : phạt 20k</option>
+                                        <option value="lên đơn sai hoặc quên không lên đơn hàng cho khách : phạt 50k 1 đơn -50000">lên đơn sai hoặc quên không lên đơn hàng cho khách : phạt 50k 1 đơn</option>
+                                        <option value="nghỉ làm 1 ngày không lý do : phạt 100k -100000">nghỉ làm 1 ngày không lý do : phạt 100k</option>
+                                        <option value="nghỉ làm 3 ngày liên tiếp không thông báo: đình chỉ công việc">nghỉ làm 3 ngày liên tiếp không thông báo: đình chỉ công việc</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    
+                    
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

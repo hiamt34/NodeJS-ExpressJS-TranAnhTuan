@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="display: inline-block;">Quản Lý Kỷ Luật</h5>
+                <a href="/punish/add"><button type="button" class="btn btn-info m-b-xs" style="float: right ;">Thêm</button></a>
+                <table id="zero-conf" class="display" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                            <th>Position</th>
+                            <th>Punish</th>
+                            <th>Date</th>
+
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% datas.forEach((data,key)=> { %>
+                            <% if (data.punish && data.punish.trim() !='' ) { %>
+                                <tr>
+                                    <td>
+                                        <%= key + 1 %>
+                                    </td>
+                                    <td>
+                                        <%= data.name %>
+                                    </td>
+                                    <td>
+                                        <%= data.born %>
+                                    </td>
+                                    <td>
+                                        <%= data.position %>
+                                    </td>
+                                    <td>
+                                        <%= data.punish %>
+                                    </td>
+                                    <td>
+                                        <%= data.createdAt.toDateString() %>
+                                    </td>
+                                    <td>
+                                        <a href="/punish/action/edit/<%= data._id %>"><i data-feather="delete"></i></a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                    <% }) %>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                            <th>Position</th>
+                            <th>Punish</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

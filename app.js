@@ -11,6 +11,8 @@ var usersRouter = require('./routes/users');
 var accountsRouter = require('./routes/account');
 var dashboardRouter = require('./routes/dashboard');
 var salaryRouter = require('./routes/salary');
+var timesRouter = require('./routes/time');
+var punishsRouter = require('./routes/punish');
 
 // var authRouter = require('./routes/auth');
 
@@ -39,6 +41,8 @@ app.use('/user', authController.checkLogin, usersRouter);
 app.use('/account', authController.checkLogin, accountsRouter);
 app.use('/salary', authController.checkLogin, salaryRouter);
 app.use('/dashboard', authController.checkLogin, dashboardRouter);
+app.use('/time', authController.checkLogin, timesRouter);
+app.use('/punish', authController.checkLogin, punishsRouter);
 
 // app.use('/auth', authRouter);
 
