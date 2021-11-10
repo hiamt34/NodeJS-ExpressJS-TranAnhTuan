@@ -49,6 +49,17 @@ class AuthController {
         res.clearCookie("userId")
         return res.redirect('/')
     }
+
+    checkRole = async (req, res, next) => {
+            const data = await accountModel.findById(req.signedCookies.userId)
+            if (data.role === 'admin') {
+                return next()
+            }
+
+            let error = new Error('bạn không có quyền')
+            error.status = 409
+            return next(error)
+    }
 }
 
 const authController = new AuthController

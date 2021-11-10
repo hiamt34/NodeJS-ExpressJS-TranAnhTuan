@@ -10,6 +10,8 @@
                         <tr>
                             <th>Email</th>
                             <th>Status</th>
+                            <th>Role</th>
+                            <th>User</th>
                             <th>Date</th>
                             <th>Action</th>
                         </tr>
@@ -26,6 +28,8 @@
                                             <a href="/account/true/<%= data._id %>"><span class="badge bg-danger">Unactive</span></a>
                                         <% } %>
                                     </td>
+                                    <td><%= data.role %></td>
+                                    <td><%= data.user.name %></td>
                                     <td><%= data.createdAt.toDateString() %></td>
                                     <td>
                                         <a href="/account/action/delete/<%= data._id %>"><i data-feather="delete"></i></a>

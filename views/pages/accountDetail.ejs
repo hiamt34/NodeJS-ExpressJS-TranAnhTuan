@@ -16,11 +16,27 @@
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password" class="form-control" name="password" id="exampleInputPassword1" value='<%= locals.data ? data.password : null %>'>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select class="form-select" id="autoSizingSelect" name="role" value='<%= locals.data ? data.role : null %>'>
+                            <option value="admin">ADmin</option>
+                            <option value="nhanvien">Nhân viên</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">User </label>
+                        <select class="form-select" id="autoSizingSelect" name="user" value='<%= locals.data ? data.user._id : null %>'>
+                            <% datas.forEach(data => { %>
+                                <option value="<%= data._id  %> "><%= data.name  %>(<%= data.position  %>)</option>
+                            <% }) %>
+                            
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
             </div>
         </div>
     </div>
-</div>
+</div> 
 

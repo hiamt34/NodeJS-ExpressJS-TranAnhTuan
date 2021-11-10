@@ -1,4 +1,5 @@
-const accountservice = require("../services/account.service")
+const accountservice = require("../services/account.service");
+const userservice = require("../services/user.service");
 
 class AccountController {
 
@@ -10,21 +11,25 @@ class AccountController {
         try {
             const query = req.query
             const datas = await this.service.getAll(query)
+            // console.log(datas);
+
             res.render('pages/account',{
                 datas
             });
-        } catch (error) {
+        } catch (error) { 
             next(error)
         }
         
     };
 
     show = async (req, res, next) => {
-        try {
+        try { 
             const id = req.params._id
             const data = await this.service.getDetail(id)
+            const datas = await userservice.getAll({})
             return res.render('pages/accountDetail',{
-                data
+                data,
+                datas
             });
         } catch (error) {
             next(error)

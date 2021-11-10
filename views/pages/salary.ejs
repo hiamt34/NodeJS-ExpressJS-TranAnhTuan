@@ -4,8 +4,11 @@
             <div class="card-body">
                 <h5 class="card-title" style="display: inline-block;">Quản Lý Lương</h5>
                 <button onclick="exportReportToExcel(this)" type="button" class="btn btn-success m-b-xs" style="float: right ;" >Xuất Bảng Lương Excel</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right ;">
+                  Sửa doanh số
+                </button>
 
-                <h3 class="card-title" style="display: inline-block;float:right" >Doanh số 6 tỷ/ tháng</h3>
+                <h3 class="card-title" style="display: inline-block;float:right" >Doanh số <%= sale %> / tháng</h3>
                 <table class="display" style="display:none;">
                     <thead>
                         <tr>
@@ -26,7 +29,7 @@
                                 <td><%= data.born %> </td>
                                 <td><%= data.position %> </td>
                                 <td><%= data.salary ? data.salary : "Chưa nhập dữ liệu" %> VNĐ</td>
-                                <td><%= data.bonus ? Number(data.bonus * 6000000000) : "Chưa nhập dữ liệu"%> VNĐ</td>
+                                <td><%= data.bonus ? Number(data.bonus * sale) : "Chưa nhập dữ liệu"%> VNĐ</td>
                                 <td><%= (Number(data.salary) + Number(data.bonus * data.salary)) || "..." %> VNĐ</td>
                             </tr>
                         <% }) %>
@@ -42,7 +45,7 @@
                             <th>Position</th>
                             <th>Salary</th>
                             <th>Bonus</th>
-                            <th>Total</th>
+                            <th>Total</th> 
 
                             <th>Action</th>
                         </tr>
@@ -55,8 +58,8 @@
                                 <td><%= data.born %> </td>
                                 <td><%= data.position %> </td>
                                 <td><%= data.salary ? data.salary : "Chưa nhập dữ liệu" %> VNĐ</td>
-                                <td><%= data.bonus ? Number(data.bonus * 6000000000) : "Chưa nhập dữ liệu"%> VNĐ</td>
-                                <td><%= (Number(data.salary) + Number(data.bonus * data.salary)) || "..." %> VNĐ</td>
+                                <td><%= data.bonus ? Number(data.bonus * sale) : "Chưa nhập dữ liệu"%> VNĐ</td>
+                                <td><%= (Number(data.salary) + Number(data.bonus * sale)) || "..." %> VNĐ</td>
                                 <td>
                                     <a href="/salary/action/edit/<%= data._id %>"><i data-feather="edit"></i></a>
                                 </td>
@@ -78,6 +81,29 @@
                 </table>
             </div>
         </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content" style="background-color: #181821">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Doanh số tháng</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="POST" action="/salary/sale">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Doanh số</label>
+                    <input type="number" name="sale" class="form-control" id="exampleInputPassword1">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Save changes</button>
+            </div>
+        </form>
+        
+    </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
