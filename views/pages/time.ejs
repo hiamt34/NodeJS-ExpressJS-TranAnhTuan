@@ -10,12 +10,12 @@
                             <th rowspan="2">Name</th>
                             <th rowspan="2">Birthday</th>
                             <th rowspan="2">Position</th>
-                            <th colspan="2" style="text-align: center;">calendar</th>
+                            <th colspan="3" style="text-align: center;">calendar</th>
                         </tr>
                         <tr>
                             <th style="text-align: center;">8h-12H</th>
                             <th style="text-align: center;">14h-18H</th>
-
+                            <th style="text-align: center;">18h-23H</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +37,13 @@
                                         <a href="/time/timec2/false/<%= data._id %>"><i data-feather="check"></i></a>
                                     <% } else { %>
                                         <a href="/time/timec2/true/<%= data._id %>"><i data-feather="info" style="color: #dc3545"></i></a>
+                                    <% } %>
+                                </td>
+                                <td style="text-align: center;">
+                                    <% if (data.timec3) { %>
+                                        <a href="/time/timec3/false/<%= data._id %>"><i data-feather="check"></i></a>
+                                    <% } else { %>
+                                        <a href="/time/timec3/true/<%= data._id %>"><i data-feather="info" style="color: #dc3545"></i></a>
                                     <% } %>
                                 </td>
                             </tr>

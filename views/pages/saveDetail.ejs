@@ -1,0 +1,37 @@
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" style="display: inline-block;">Thêm/Sửa Tài Liệu</h5>
+                <a href="/save"><button type="button" class="btn btn-info m-b-xs"  style="float: right ;">Quay Lại</button></a>
+                
+                <form method="post" action=" <%= locals.data ? '/save/edit/'+data._id  : '/save/add' %> " enctype="multipart/form-data">
+                    <!-- <div class="container"> -->
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control"  name="name" value='<%= locals.data ? data.name : null %>'>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Upload file</label>
+                                    <input class="form-control" type="file" name="url" id="Link">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    <!-- </div> -->
+                    
+                    
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

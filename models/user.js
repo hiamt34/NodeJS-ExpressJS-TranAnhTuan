@@ -27,6 +27,9 @@ const user = new mongoose.Schema({
     timec2: {
         type: Boolean, default: false
     },
+    timec3: {
+        type: Boolean, default: false
+    },
     bonus: {
         type: Number, 
     },
@@ -34,6 +37,9 @@ const user = new mongoose.Schema({
         type: Number, 
     },
     punish: {
+        type: String,
+    },
+    seniority: {
         type: String,
     }
 }, {

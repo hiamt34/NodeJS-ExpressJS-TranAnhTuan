@@ -3,7 +3,7 @@ const timeservice = require("../services/time.service")
 class TimeController  {
 
     constructor(service) {
-        this.service = service
+        this.service = service 
     }
 
     index = async (req, res, next) => {

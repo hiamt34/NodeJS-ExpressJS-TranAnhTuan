@@ -13,7 +13,7 @@ var dashboardRouter = require('./routes/dashboard');
 var salaryRouter = require('./routes/salary');
 var timesRouter = require('./routes/time');
 var punishsRouter = require('./routes/punish');
-
+var savesRouter = require('./routes/save');
 // var authRouter = require('./routes/auth');
 
 const connect = require('./db/connect');
@@ -33,6 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser("codetoanbug06"));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 
 
@@ -43,6 +44,8 @@ app.use('/salary', authController.checkLogin, salaryRouter);
 app.use('/dashboard', authController.checkLogin, dashboardRouter);
 app.use('/time', authController.checkLogin, timesRouter);
 app.use('/punish', authController.checkLogin, punishsRouter);
+app.use('/save', authController.checkLogin, savesRouter);
+
 
 // app.use('/auth', authRouter);
 

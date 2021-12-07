@@ -16,6 +16,7 @@
                             <th>Adress</th>
                             <th>Phone</th>
                             <th>Email</th>
+                            <th>Seniority</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                                 <td><%= data.address %> </td>
                                 <td><%= data.phone %> </td>
                                 <td><%= data.email %> </td>
+                                <td><%= data.seniority %> </td>
                                 <td>
                                     <a href="/user/action/delete/<%= data._id %>"><i data-feather="delete"></i></a>
                                     <a href="/user/action/edit/<%= data._id %>"><i data-feather="edit"></i></a>
