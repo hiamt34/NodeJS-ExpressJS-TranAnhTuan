@@ -19,7 +19,7 @@ var upload = multer({
 var router = express.Router();
 
 //save
-router.get('/', saveController.index);
+router.get('/', authController.checkRole, saveController.index);
 
 
 router.get('/action/delete/:_id', authController.checkRole, saveController.delete);
